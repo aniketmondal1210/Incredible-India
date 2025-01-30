@@ -1,0 +1,452 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Incredible India - A Journey Through Wonders</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+    <div class="page-wrapper">
+        <header class="main-header">
+            <nav class="navbar">
+                <div class="logo">
+                    <h1>Incredible India</h1>
+                </div>
+                <div class="menu-toggle">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
+                <ul class="nav-menu">
+                    <li><a href="#home" class="active">Home</a></li>
+                    <li><a href="#gallery">Gallery</a></li>
+                    <li><a href="#explore">Explore</a></li>
+                    <li><a href="#cuisine">Cuisine</a></li>
+                    <li><a href="#festivals">Festivals</a></li>
+                    <li><a href="#testimonials">Testimonials</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                </ul>
+            </nav>
+
+            <div class="hero" id="home">
+                <div class="hero-content-wrapper">
+                    <div class="hero-content">
+                        <h2 class="hero-subtitle translatable">Welcome To</h2>
+                        <h1 class="hero-title translatable">Incredible India</h1>
+                        <p class="hero-description translatable">Explore the colors of <span class="change-content"></span><span class="typing-cursor">|</span></p>
+                        <div class="cta-buttons">
+                            <a href="#explore" class="btn btn-primary">Discover Now</a>
+                            <a href="#signup" class="btn btn-secondary">Plan Your Trip</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </header>
+
+        <main>
+            <section id="gallery" class="gallery">
+                <h2 class="section-title translatable">Gallery of Wonders</h2>
+                <div class="gallery-grid">
+                    <div class="gallery-item">
+                        <img src="images/taj-mahal.jpeg" alt="Taj Mahal, Agra - A UNESCO World Heritage Site" title="Taj Mahal, Agra - Symbol of Love" width="600" height="400">
+                        <div class="gallery-caption">
+                            <h3 class="translatable">Taj Mahal, Agra</h3>
+                            <p class="translatable">A testament to eternal love</p>
+                        </div>
+                    </div>
+                    <div class="gallery-item">
+                        <img src="images/hawa-mahal.jpeg" alt="Hawa Mahal, Jaipur - The Palace of Winds" title="Hawa Mahal, Jaipur - A Historical Monument" width="600" height="400" >
+                        <div class="gallery-caption">
+                            <h3 class="translatable">Hawa Mahal, Jaipur</h3>
+                            <p class="translatable">The Palace of Winds</p>
+                        </div>
+                    </div>
+                    <div class="gallery-item">
+                        <img src="images/kerala.jpeg" alt="Backwaters, Kerala - A serene network of lagoons and canals" title="Backwaters, Kerala - God's Own Country" width="600" height="400" >
+                        <div class="gallery-caption">
+                            <h3 class="translatable">Backwaters, Kerala</h3>
+                            <p class="translatable">Serene beauty of nature</p>
+                        </div>
+                    </div>
+                    <div class="gallery-item">
+                        <img src="images/varanasi-ghats.jpeg" alt="Ghats of Varanasi - Sacred steps by the Ganges River" title="Ghats of Varanasi - Spiritual Capital of India" width="600" height="400" >
+                        <div class="gallery-caption">
+                            <h3 class="translatable">Ghats of Varanasi</h3>
+                            <p class="translatable">Spiritual heart of India</p>
+                        </div>
+                    </div>
+                    <div class="gallery-item">
+                        <img src="images/red-fort.jpeg" alt="Red Fort, Delhi - A symbol of Mughal architecture and India's history" title="Red Fort, Delhi - UNESCO World Heritage Site" width="600" height="400" >
+                        <div class="gallery-caption">
+                            <h3 class="translatable">Red Fort, Delhi</h3>
+                            <p class="translatable">Mughal grandeur</p>
+                        </div>
+                    </div>
+                    <div class="gallery-item">
+                        <img src="images/goa-beaches.jpeg" alt="Beaches of Goa - A paradise for beach lovers and vacationers" title="Beaches of Goa - Sun, Sand, and Sea" width="600" height="400" >
+                        <div class="gallery-caption">
+                            <h3 class="translatable">Beaches of Goa</h3>
+                            <p class="translatable">Sun, sand, and serenity</p>
+                        </div>
+                    </div>
+                    <div class="gallery-item">
+                        <img src="images/pangong-lake.jpeg" alt="Pangong Lake, Ladakh - A mesmerizing high-altitude lake with crystal-clear waters" title="Pangong Lake, Ladakh - Natural Wonder" width="600" height="400" >
+                        <div class="gallery-caption">
+                            <h3 class="translatable">Pangong Lake, Ladakh</h3>
+                            <p class="translatable">Himalayan beauty</p>
+                        </div>
+                    </div>
+                    <div class="gallery-item">
+                        <img src="images/gateway-of-india.jpeg" alt="Gateway of India, Mumbai - A historic archway overlooking the Arabian Sea" title="Gateway of India, Mumbai - Icon of India's colonial past" width="600" height="400" >
+                        <div class="gallery-caption">
+                            <h3 class="translatable">Gateway of India, Mumbai</h3>
+                            <p class="translatable">Historic landmark</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <section id="explore" class="explore">
+                <h2 class="section-title translatable">Explore India</h2>
+                <div class="explore-grid">
+                    <div class="explore-item">
+                        <img src="images/taj-mahal-2.jpeg" alt="Taj Mahal - The iconic white marble mausoleum in Agra, India" title="Taj Mahal - Wonder of the World" width="600" height="400" >
+                        <div class="explore-content">
+                            <h3 class="translatable">Taj Mahal, Agra</h3>
+                            <p class="translatable">A symbol of eternal love, this ivory-white marble mausoleum is one of the New Seven Wonders of the World.</p>
+                            <a href="https://en.wikipedia.org/wiki/Taj_Mahal" class="btn btn-tertiary" target="_blank">Learn More</a>
+                        </div>
+                    </div>
+                    <div class="explore-item">
+                        <img src="images/kerala-backwaters.jpeg" alt="Kerala Backwaters - Tranquil waterways surrounded by lush greenery" title="Kerala Backwaters - A Unique Experience" width="600" height="400" >
+                        <div class="explore-content">
+                            <h3 class="translatable">Kerala Backwaters</h3>
+                            <p class="translatable">Experience the serene beauty of Kerala's interconnected canals, rivers, lakes, and inlets.</p>
+                            <a href="https://en.wikipedia.org/wiki/Backwaters_of_Kerala" class="btn btn-tertiary" target="_blank">Learn More</a>
+                        </div>
+                    </div>
+                    <div class="explore-item">
+                        <img src="images/varanasi-puja.jpeg" alt="Varanasi - Spiritual rituals on the Ghats of the Ganges River" title="Varanasi - The City of Spirituality" width="600" height="400" >
+                        <div class="explore-content">
+                            <h3 class="translatable">Varanasi</h3>
+                            <p class="translatable">One of the world's oldest living cities, Varanasi is a spiritual haven on the banks of the sacred Ganges.</p>
+                            <a href="https://en.wikipedia.org/wiki/Varanasi" class="btn btn-tertiary" target="_blank">Learn More</a>
+                        </div>
+                    </div>
+                    <div class="explore-item">
+                        <img src="images/rajasthan-fort.jpeg" alt="Rajasthan Fort - Majestic forts and palaces showcasing Rajasthan's royal heritage" title="Rajasthan Fort - A Historical Marvel" width="600" height="400" >
+                        <div class="explore-content">
+                            <h3 class="translatable">Rajasthan</h3>
+                            <p class="translatable">Discover the land of kings, with its majestic forts, vibrant culture, and golden sand dunes.</p>
+                            <a href="https://en.wikipedia.org/wiki/Rajasthan" class="btn btn-tertiary" target="_blank">Learn More</a>
+                        </div>
+                    </div>
+                    <div class="explore-item">
+                        <img src="images/golden-temple.jpeg" alt="Golden Temple - The holiest Gurdwara of Sikhism in Amritsar" title="Golden Temple - A Spiritual Haven" width="600" height="400" >
+                        <div class="explore-content">
+                            <h3 class="translatable">Golden Temple, Amritsar</h3>
+                            <p class="translatable">Visit the shimmering Golden Temple, a spiritual center for Sikhs and a symbol of human brotherhood and equality.</p>
+                            <a href="https://en.wikipedia.org/wiki/Golden_Temple" class="btn btn-tertiary" target="_blank">Learn More</a>
+                        </div>
+                    </div>
+                    <div class="explore-item">
+                        <img src="images/hampi-ruins.jpeg" alt="Hampi Ruins - Ancient archaeological site with stunning temple ruins" title="Hampi - A UNESCO World Heritage Site" width="600" height="400" >
+                        <div class="explore-content">
+                            <h3 class="translatable">Hampi, Karnataka</h3>
+                            <p class="translatable">Explore the ruins of Hampi, a UNESCO World Heritage site, showcasing the grandeur of the Vijayanagara Empire.</p>
+                            <a href="https://en.wikipedia.org/wiki/Hampi" class="btn btn-tertiary" target="_blank">Learn More</a>
+                        </div>
+                    </div>
+                    <div class="explore-item">
+                        <img src="images/ellora-caves.jpeg" alt="Ellora Caves - Ancient rock-cut temples showcasing Indian architecture" title="Ellora Caves - UNESCO World Heritage Site" width="600" height="400">
+                        <div class="explore-content">
+                            <h3 class="translatable">Ellora Caves, Maharashtra</h3>
+                            <p class="translatable">Explore the magnificent rock-cut temples spanning three faiths: Buddhism, Hinduism, and Jainism.</p>
+                            <a href="https://en.wikipedia.org/wiki/Ellora_Caves" class="btn btn-tertiary" target="_blank">Learn More</a>
+                        </div>
+                    </div>
+                    <div class="explore-item">
+                        <img src="images/sundarbans.jpeg" alt="Sundarbans - Largest mangrove forest and tiger reserve" title="Sundarbans - Natural Wonder" width="600" height="400">
+                        <div class="explore-content">
+                            <h3 class="translatable">Sundarbans, West Bengal</h3>
+                            <p class="translatable">Discover the world's largest mangrove forest, home to the Bengal tiger and unique wildlife.</p>
+                            <a href="https://en.wikipedia.org/wiki/Sundarbans" class="btn btn-tertiary" target="_blank">Learn More</a>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <section id="features" class="features">
+                <h2 class="section-title translatable">Plan Your Indian Adventure</h2>
+                <div class="features-grid">
+                    <div class="feature-item" id="weather-widget">
+                        <h3 class="translatable">Weather Forecast</h3>
+                        <div id="weather-content"></div>
+                    </div>
+                    <div class="feature-item" id="currency-converter">
+                        <h3 class="translatable">Currency Converter</h3>
+                        <div id="converter-content">
+                            <div class="converter-input">
+                                <input type="number" id="amount" placeholder="Amount" min="0" step="0.01">
+                                <select id="from-currency">
+                                    <!-- Options will be dynamically populated -->
+                                </select>
+                            </div>
+                            <div class="converter-output">
+                                <input type="text" id="result" readonly>
+                                <select id="to-currency">
+                                    <option value="INR">INR</option>
+                                </select>
+                            </div>
+                            <button id="convert-btn" class="btn btn-primary">Convert</button>
+                            <canvas id="historical-rates-chart" width="400" height="200"></canvas>
+                        </div>
+                    </div>
+                    <div class="feature-item" id="interactive-map">
+                        <h3 class="translatable">Explore Destinations</h3>
+                        <div id="map"></div>
+                    </div>
+                </div>
+            </section>
+
+            <section id="world-clock" class="world-clock">
+                <h2 class="section-title translatable">World Clock</h2>
+                <div class="world-clock-grid">
+                    <!-- Clock items will be dynamically added here -->
+                </div>
+            </section>
+
+            <section id="language-translator" class="language-translator">
+                <h2 class="section-title">Language Translator</h2>
+                <div class="translator-container">
+                    <textarea id="text-to-translate" placeholder="Enter text to translate" rows="4"></textarea>
+                    <div class="translator-controls">
+                        <div class="language-select-wrapper">
+                            <label for="input-language">From:</label>
+                            <select id="input-language">
+                                <option value="en">English</option>
+                                <option value="hi">Hindi</option>
+                                <option value="bn">Bengali</option>
+                                <option value="te">Telugu</option>
+                                <option value="mr">Marathi</option>
+                                <option value="ta">Tamil</option>
+                                <option value="ur">Urdu</option>
+                                <option value="gu">Gujarati</option>
+                                <option value="kn">Kannada</option>
+                                <option value="ml">Malayalam</option>
+                                <option value="pa">Punjabi</option>
+                            </select>
+                        </div>
+                        <div class="language-select-wrapper">
+                            <label for="output-language">To:</label>
+                            <select id="output-language">
+                                <option value="en">English</option>
+                                <option value="hi">Hindi</option>
+                                <option value="bn">Bengali</option>
+                                <option value="te">Telugu</option>
+                                <option value="mr">Marathi</option>
+                                <option value="ta">Tamil</option>
+                                <option value="ur">Urdu</option>
+                                <option value="gu">Gujarati</option>
+                                <option value="kn">Kannada</option>
+                                <option value="ml">Malayalam</option>
+                                <option value="pa">Punjabi</option>
+                            </select>
+                        </div>
+                    </div>
+                    <button id="translate-btn" class="btn btn-primary">Translate</button>
+                    <div id="translation-result" class="translation-result"></div>
+                </div>
+            </section>
+
+            <section id="virtual-tour" class="virtual-tour">
+                <h2 class="section-title translatable">Virtual Tour</h2>
+                <button id="virtual-tour-btn" class="btn btn-secondary">Start Virtual Tour</button>
+                <div id="virtual-tour-modal" class="modal">
+                    <div class="modal-content">
+                        <span id="close-virtual-tour" class="close">&times;</span>
+                        <h3 class="translatable">Virtual Tour of India</h3>
+                        <iframe width="100%" height="400" src="https://www.youtube.com/embed/35npVaFGHMY" frameborder="0" allowfullscreen></iframe>
+                    </div>
+                </div>
+            </section>
+
+            <section id="travel-planner" class="travel-planner">
+                <h2 class="section-title translatable">Travel Planner</h2>
+                <form id="planner-form">
+                    <input type="text" id="planner-destination" placeholder="Destination" required>
+                    <input type="number" id="planner-duration" placeholder="Duration (days)" required min="1" max="30">
+                    <fieldset>
+                        <legend class="translatable">Interests:</legend>
+                        <label><input type="checkbox" name="interests" value="culture"> Culture</label>
+                        <label><input type="checkbox" name="interests" value="nature"> Nature</label>
+                        <label><input type="checkbox" name="interests" value="food"> Food</label>
+                    </fieldset>
+                    <button type="submit" class="btn btn-primary">Generate Itinerary</button>
+                </form>
+                <div id="itinerary-result"></div>
+            </section>
+
+            <section id="cuisine" class="cuisine">
+                <h2 class="section-title translatable">Savor Indian Cuisine</h2>
+                <div class="cuisine-grid">
+                    <div class="cuisine-item">
+                        <img src="images/butter-chicken.jpeg" alt="Butter Chicken - A rich and creamy curry made with tender chicken in a tomato-based sauce" title="Butter Chicken" width="600" height="400" >
+                        <div class="cuisine-content">
+                            <h3 class="translatable">Butter Chicken</h3>
+                            <p class="translatable">A rich and creamy curry made with tender chicken in a tomato-based sauce.</p>
+                        </div>
+                    </div>
+                    <div class="cuisine-item">
+                        <img src="images/masala-dosa.jpeg" alt="Masala Dosa - A crispy fermented crepe filled with spiced potatoes, served with chutneys and sambar" title="Masala Dosa" width="600" height="400" >
+                        <div class="cuisine-content">
+                            <h3 class="translatable">Masala Dosa</h3>
+                            <p class="translatable">A crispy fermented crepe filled with spiced potatoes, served with chutneys and sambar.</p>
+                        </div>
+                    </div>
+                    <div class="cuisine-item">
+                        <img src="images/biriyani.jpeg" alt="Biryani - A flavorful and aromatic rice dish layered with spices, meat, and herbs" title="Biryani - A Culinary Delight" width="600" height="400" >
+                        <div class="cuisine-content">
+                            <h3 class="translatable">Biryani</h3>
+                            <p class="translatable">A fragrant rice dish cooked with meat or vegetables, aromatic spices, and herbs.</p>
+                        </div>
+                    </div>
+                    <div class="cuisine-item">
+                        <img src="images/palak-paneer.jpeg" alt="Palak Paneer - A vegetarian dish consisting of paneer cheese in a thick paste made from puréed spinach" title="Palak Paneer - A Vegetarian Delight" width="600" height="400" >
+                        <div class="cuisine-content">
+                            <h3 class="translatable">Palak Paneer</h3>
+                            <p class="translatable">A vegetarian dish consisting of paneer cheese in a thick paste made from puréed spinach.</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <section id="festivals" class="festivals">
+                <h2 class="section-title translatable">Vibrant Festivals</h2>
+                <div class="festivals-grid">
+                    <div class="festival-item">
+                        <img src="images/holi.jpeg" alt="Holi - The Festival of Colors, celebrated with vibrant powders, music, and joy" title="Holi - A Celebration of Spring and Unity" width="600" height="400" >
+                        <div class="festival-content">
+                            <h3 class="translatable">Holi</h3>
+                            <p class="translatable">The festival of colors, celebrating the arrival of spring and the triumph of good over evil.</p>
+                        </div>
+                    </div>
+                    <div class="festival-item">
+                        <img src="images/diwali.jpeg" alt="Diwali - The Festival of Lights, celebrated with diyas, fireworks, and sweets" title="Diwali - A Celebration of Victory and Light" width="600" height="400" >
+                        <div class="festival-content">
+                            <h3 class="translatable">Diwali</h3>
+                            <p class="translatable">The festival of lights, symbolizing the victory of light over darkness and knowledge over ignorance.</p>
+                        </div>
+                    </div>
+                    <div class="festival-item">
+                        <img src="images/onam.jpeg" alt="Onam - A harvest festival celebrated in Kerala with flower carpets, boat races, and feasts" title="Onam - Kerala's Harvest Festival" width="600" height="400" >
+                        <div class="festival-content">
+                            <h3 class="translatable">Onam</h3>
+                            <p class="translatable">A harvest festival celebrated in Kerala with intricate flower carpets, exciting boat races, and grand feasts.</p>
+                        </div>
+                    </div>
+                    <div class="festival-item">
+                        <img src="images/durga-puja.jpeg" alt="Durga Puja - A festival honoring the Hindu goddess Durga, celebrated with elaborate pandals and cultural events" title="Durga Puja - Celebrating the Divine Feminine" width="600" height="400" >
+                        <div class="festival-content">
+                            <h3 class="translatable">Durga Puja</h3>
+                            <p class="translatable">A grand festival honoring the Hindu goddess Durga, celebrated with elaborate pandals, cultural events, and devotional activities.</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <section id="testimonials" class="testimonials">
+                <h2 class="section-title translatable">What Our Visitors Say</h2>
+                <div class="testimonials-grid">
+                    <div class="testimonial-item">
+                        <p class="translatable">"India is a sensory overload in the best possible way. The colors, sounds, and flavors are unlike anywhere else in the world!"</p>
+                        <h4>- Sarah, USA</h4>
+                    </div>
+                    <div class="testimonial-item">
+                        <p class="translatable">"The diversity of landscapes and cultures in India is astounding. From the Himalayas to the beaches, every region offers a unique experience."</p>
+                        <h4>- Carlos, Spain</h4>
+                    </div>
+                    <div class="testimonial-item">
+                        <p class="translatable">"The hospitality of the Indian people is unmatched. I felt welcomed everywhere I went."</p>
+                        <h4>- Yuki, Japan</h4>
+                    </div>
+                </div>
+            </section>
+
+            <section id="signup" class="signup">
+                <h2 class="section-title translatable">Sign Up for Updates</h2>
+                <form id="signup-form" class="signup-form">
+                    <input type="text" id="name" name="name" placeholder="Your Name" required>
+                    <input type="email" id="email" name="email" placeholder="Your Email" required>
+                    <button type="submit" class="btn btn-secondary">Sign Up</button>
+                </form>
+            </section>
+
+            <section id="contact" class="contact">
+                <h2 class="section-title translatable">Contact Us</h2>
+                <form id="contact-form" class="contact-form">
+                    <input type="text" id="contact-name" name="contact-name" placeholder="Your Name" required>
+                    <input type="email" id="contact-email" name="contact-email" placeholder="Your Email" required>
+                    <textarea id="message" name="message" placeholder="Your Message" required></textarea>
+                    <button type="submit" class="btn btn-primary">Send Message</button>
+                </form>
+            </section>
+        </main>
+
+        <footer class="main-footer">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3 class="translatable">About Us</h3>
+                    <p class="translatable">Discover the beauty and diversity of India with our curated travel experiences.</p>
+                </div>
+                <div class="footer-section">
+                    <h3 class="translatable">Quick Links</h3>
+                    <ul>
+                        <li><a href="#home">Home</a></li>
+                        <li><a href="#gallery">Gallery</a></li>
+                        <li><a href="#explore">Explore</a></li>
+                        <li><a href="#cuisine">Cuisine</a></li>
+                        <li><a href="#festivals">Festivals</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h3 class="translatable">Connect With Us</h3>
+                    <div class="social-icons">
+                        <a href="https://www.facebook.com/incredibleindia/?locale=en_GB" class="social-icon"><i class="fab fa-facebook-f"></i></a>
+                        <a href="https://x.com/incredibleindia?ref_src=twsrc%5Egoogle%7Ctwcamp%5Eserp%7Ctwgr%5Eauthor&mx=2" class="social-icon"><i class="fab fa-twitter"></i></a>
+                        <a href="https://www.instagram.com/incredibleindia/?hl=en" class="social-icon"><i class="fab fa-instagram"></i></a>
+                        <a href="https://www.youtube.com/watch?v=rTDaZoDDW5g" class="social-icon"><i class="fab fa-youtube"></i></a>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p class="translatable">&copy; 2025 Incredible India. All rights reserved.</p>
+            </div>
+        </footer>
+    </div>
+    <script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"></script>
+    <script src="script.js"></script>
+    <button id="dark-mode-toggle" class="dark-mode-toggle" aria-label="Toggle dark mode">
+        <i class="fas fa-moon"></i>
+    </button>
+
+    <div class="floating-action-button">
+        <button id="fab-toggle" aria-label="Quick navigation">
+            <i class="fas fa-bars"></i>
+        </button>
+        <div class="fab-menu">
+            <a href="#home" aria-label="Go to Home"><i class="fas fa-home"></i></a>
+            <a href="#gallery" aria-label="Go to Gallery"><i class="fas fa-images"></i></a>
+            <a href="#explore" aria-label="Go to Explore"><i class="fas fa-compass"></i></a>
+            <a href="#cuisine" aria-label="Go to Cuisine"><i class="fas fa-utensils"></i></a>
+            <a href="#festivals" aria-label="Go to Festivals"><i class="fas fa-calendar-alt"></i></a>
+        </div>
+    </div>
+</body>
+</html>
+
